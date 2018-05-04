@@ -37,9 +37,11 @@ public class RecordPlayback : MonoBehaviour
 
     void Start()
     {
+        
         LocalAvatar.RecordPackets = true;
         LocalAvatar.PacketRecorded += OnLocalAvatarPacketRecorded;
         _lastRecord = record;
+        
         if (playback)
         {
 
@@ -87,10 +89,10 @@ public class RecordPlayback : MonoBehaviour
 
     void Update()
     {
-       
-
+        
         if (!record && _lastRecord)
         {
+            
             WriteToFile();
             _lastRecord = record;
         }
